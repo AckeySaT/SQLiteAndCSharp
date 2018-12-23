@@ -49,76 +49,76 @@
             // 
             // toolStrip1
             // 
-            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btCreate,
             this.btConnect,
             this.btReadAll,
             this.btAdd,
             this.btClearTable});
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
             // 
             // btCreate
             // 
-            resources.ApplyResources(this.btCreate, "btCreate");
             this.btCreate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.btCreate, "btCreate");
             this.btCreate.Name = "btCreate";
             this.btCreate.Click += new System.EventHandler(this.btCreate_Click);
             // 
             // btConnect
             // 
-            resources.ApplyResources(this.btConnect, "btConnect");
             this.btConnect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.btConnect, "btConnect");
             this.btConnect.Name = "btConnect";
             this.btConnect.Click += new System.EventHandler(this.btConnect_Click);
             // 
             // btReadAll
             // 
-            resources.ApplyResources(this.btReadAll, "btReadAll");
             this.btReadAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.btReadAll, "btReadAll");
             this.btReadAll.Name = "btReadAll";
             this.btReadAll.Click += new System.EventHandler(this.btReadAll_Click);
             // 
             // btAdd
             // 
-            resources.ApplyResources(this.btAdd, "btAdd");
             this.btAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.btAdd, "btAdd");
             this.btAdd.Name = "btAdd";
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // btClearTable
             // 
-            resources.ApplyResources(this.btClearTable, "btClearTable");
             this.btClearTable.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.btClearTable, "btClearTable");
             this.btClearTable.Name = "btClearTable";
             this.btClearTable.Click += new System.EventHandler(this.btClearTable_Click);
             // 
             // statusStrip1
             // 
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lbStatus,
             this.lbStatusText});
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
             // 
             // lbStatus
             // 
-            resources.ApplyResources(this.lbStatus, "lbStatus");
             this.lbStatus.Name = "lbStatus";
+            resources.ApplyResources(this.lbStatus, "lbStatus");
             // 
             // lbStatusText
             // 
-            resources.ApplyResources(this.lbStatusText, "lbStatusText");
             this.lbStatusText.Name = "lbStatusText";
+            resources.ApplyResources(this.lbStatusText, "lbStatusText");
             // 
             // dgvViewer
             // 
-            resources.ApplyResources(this.dgvViewer, "dgvViewer");
             this.dgvViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvViewer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Author,
             this.Book});
+            resources.ApplyResources(this.dgvViewer, "dgvViewer");
             this.dgvViewer.Name = "dgvViewer";
             // 
             // Id

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLiteSample", "SQLiteSample\SQLiteSample.csproj", "{D745274A-5017-4FEE-A023-1DCF01928DA9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Racion2018", "SQLiteSample\Racion2018.csproj", "{D745274A-5017-4FEE-A023-1DCF01928DA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,5 +48,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6408D55-47CC-4834-B983-D045BB624C07}
 	EndGlobalSection
 EndGlobal
