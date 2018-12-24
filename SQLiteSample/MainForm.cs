@@ -87,8 +87,7 @@ namespace Racion2018
 
         private void btConnect_Click(object sender, EventArgs e)
         {
-            DataRow row = ds.Tables[0].NewRow(); // добавляем новую строку в DataTable
-            ds.Tables[0].Rows.Add(row);
+            
         }
 
         private void btSave_Click(object sender, EventArgs e)
@@ -101,28 +100,28 @@ namespace Racion2018
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            if (m_dbConn.State != ConnectionState.Open)
-            {
-                MessageBox.Show("Open connection with database");
-                return;
-            }
+            //if (m_dbConn.State != ConnectionState.Open)
+            //{
+            //    MessageBox.Show("Open connection with database");
+            //    return;
+            //}
 
-            AddDataToDb addData = new AddDataToDb();
-            if (addData.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    m_sqlCmd.CommandText = "INSERT INTO Catalog ('name_ingr', 'type_ingr') values ('" +
-                        addData.Author + "' , '" +
-                        addData.Book + "')";
+            //AddDataToDb addData = new AddDataToDb();
+            //if (addData.ShowDialog() == DialogResult.OK)
+            //{
+            //    try
+            //    {
+            //        m_sqlCmd.CommandText = "INSERT INTO Catalog ('name_ingr', 'type_ingr') values ('" +
+            //            addData.Author + "' , '" +
+            //            addData.Book + "')";
 
-                    m_sqlCmd.ExecuteNonQuery();                    
-                }
-                catch (SQLiteException ex)
-                {                    
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
+            //        m_sqlCmd.ExecuteNonQuery();                    
+            //    }
+            //    catch (SQLiteException ex)
+            //    {                    
+            //        MessageBox.Show("Error: " + ex.Message);
+            //    }
+            //}
         }
 
         private void btClearTable_Click(object sender, EventArgs e)
@@ -140,6 +139,15 @@ namespace Racion2018
 
         }
 
-    
+        private void btAddRow_Click(object sender, EventArgs e)
+        {
+            DataRow row = ds.Tables[0].NewRow(); // добавляем новую строку в DataTable
+            ds.Tables[0].Rows.Add(row);
+        }
+
+        private void GridViewer_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
