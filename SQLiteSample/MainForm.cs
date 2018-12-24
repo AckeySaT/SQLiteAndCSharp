@@ -5,26 +5,61 @@ using System.Data.SQLite;
 using System.IO;
 using System.Data;
 
-namespace SQLiteSample
+namespace Racion2018
 {
     public partial class Form1 : Form
     {
         private String dbFileName;
-        private SQLiteConnection m_dbConn;
-        private SQLiteCommand m_sqlCmd;
+        private DataSet ds = new DataSet();
+        private SQLiteConnection m_dbConn = new SQLiteConnection();
+        private SQLiteCommand m_sqlCmd = new SQLiteCommand();
+        private SQLiteDataAdapter adapter;
 
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            m_dbConn = new SQLiteConnection();
-            m_sqlCmd = new SQLiteCommand();
+            
 
-            dbFileName = "sample.sqlite";
+            dbFileName = "racion.sqlite";
             lbStatusText.Text = "Disconnected";
+
+            #region Connect
+            if (!File.Exists(dbFileName))
+                MessageBox.Show("Please, create DB and blank table (Push \"Create\" button)");
+
+            try
+            {
+                m_dbConn = new SQLiteConnection("Data Source=" + dbFileName + ";Version=3;");
+                m_dbConn.Open();
+                m_sqlCmd.Connection = m_dbConn;
+
+                lbStatusText.Text = "Connected";
+            }
+            catch (SQLiteException ex)
+            {
+                lbStatusText.Text = "Disconnected";
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            #endregion Connect
+            
+            string sql = "SELECT * FROM ingr_tbl";
+            // Создаем объект DataAdapter
+            adapter = new SQLiteDataAdapter(sql, m_dbConn);
+            // Создаем объект Dataset
+            
+            // Заполняем Dataset
+            adapter.Fill(ds);
+           //Очистка грида
+            GridViewer.Rows.Clear();
+            GridViewer.Columns.Clear();
+            GridViewer.Refresh();
+            // Отображаем данные
+            GridViewer.DataSource = ds.Tables[0];
         }
 
         private void btCreate_Click(object sender, EventArgs e)
@@ -38,7 +73,7 @@ namespace SQLiteSample
                 m_dbConn.Open();
                 m_sqlCmd.Connection = m_dbConn;
 
-                m_sqlCmd.CommandText = "CREATE TABLE IF NOT EXISTS Catalog (id INTEGER PRIMARY KEY AUTOINCREMENT, author TEXT, book TEXT)";                
+                m_sqlCmd.CommandText = "CREATE TABLE IF NOT EXISTS Catalog (id INTEGER PRIMARY KEY AUTOINCREMENT, name_ingr TEXT, name_ingr TEXT)";                
                 m_sqlCmd.ExecuteNonQuery();
 
                 lbStatusText.Text = "Connected";
@@ -52,55 +87,16 @@ namespace SQLiteSample
 
         private void btConnect_Click(object sender, EventArgs e)
         {
-            if (!File.Exists(dbFileName))
-                MessageBox.Show("Please, create DB and blank table (Push \"Create\" button)");
-
-            try
-            {
-                m_dbConn = new SQLiteConnection("Data Source=" + dbFileName + ";Version=3;");
-                m_dbConn.Open();
-                m_sqlCmd.Connection = m_dbConn;
-                               
-                lbStatusText.Text = "Connected";
-            }
-            catch (SQLiteException ex)
-            {
-                lbStatusText.Text = "Disconnected";
-                MessageBox.Show("Error: " + ex.Message);
-            }           
+            DataRow row = ds.Tables[0].NewRow(); // добавляем новую строку в DataTable
+            ds.Tables[0].Rows.Add(row);
         }
 
-        private void btReadAll_Click(object sender, EventArgs e)
+        private void btSave_Click(object sender, EventArgs e)
         {
-            DataTable dTable = new DataTable();
-            String sqlQuery;
-
-            if (m_dbConn.State != ConnectionState.Open)
-            {
-                MessageBox.Show("Open connection with database");
-                return;
-            }
-            
-            try
-            {
-                sqlQuery = "SELECT * FROM Catalog";
-                SQLiteDataAdapter adapter = new SQLiteDataAdapter(sqlQuery, m_dbConn);
-                adapter.Fill(dTable);
-
-                if (dTable.Rows.Count > 0)
-                {
-                    dgvViewer.Rows.Clear();
-
-                    for (int i = 0; i < dTable.Rows.Count; i++)
-                        dgvViewer.Rows.Add(dTable.Rows[i].ItemArray);
-                }
-                else
-                    MessageBox.Show("Database is empty");
-            }
-            catch (SQLiteException ex)
-            {               
-                MessageBox.Show("Error: " + ex.Message);
-            }           
+            SQLiteCommandBuilder commandBuilder = new SQLiteCommandBuilder(adapter);
+            adapter.Update(ds);
+            ds.Clear();
+            adapter.Fill(ds);
         }       
 
         private void btAdd_Click(object sender, EventArgs e)
@@ -116,7 +112,7 @@ namespace SQLiteSample
             {
                 try
                 {
-                    m_sqlCmd.CommandText = "INSERT INTO Catalog ('author', 'book') values ('" +
+                    m_sqlCmd.CommandText = "INSERT INTO Catalog ('name_ingr', 'type_ingr') values ('" +
                         addData.Author + "' , '" +
                         addData.Book + "')";
 
@@ -131,7 +127,19 @@ namespace SQLiteSample
 
         private void btClearTable_Click(object sender, EventArgs e)
         {
-            dgvViewer.Rows.Clear();
+            GridViewer.Rows.Clear();
         }
+
+        private void btUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GridViewer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+    
     }
 }

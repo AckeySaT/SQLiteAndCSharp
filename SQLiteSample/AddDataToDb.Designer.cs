@@ -1,4 +1,4 @@
-﻿namespace SQLiteSample
+﻿namespace Racion2018
 {
     partial class AddDataToDb
     {

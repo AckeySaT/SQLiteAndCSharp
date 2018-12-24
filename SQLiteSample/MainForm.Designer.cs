@@ -1,4 +1,4 @@
-﻿namespace SQLiteSample
+﻿namespace Racion2018
 {
     partial class Form1
     {
@@ -38,13 +38,14 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lbStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbStatusText = new System.Windows.Forms.ToolStripStatusLabel();
-            this.dgvViewer = new System.Windows.Forms.DataGridView();
+            this.GridViewer = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Book = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btUpdate = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvViewer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewer)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -53,6 +54,7 @@
             this.btCreate,
             this.btConnect,
             this.btReadAll,
+            this.btUpdate,
             this.btAdd,
             this.btClearTable});
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
@@ -111,15 +113,15 @@
             this.lbStatusText.Name = "lbStatusText";
             resources.ApplyResources(this.lbStatusText, "lbStatusText");
             // 
-            // dgvViewer
+            // GridViewer
             // 
-            this.dgvViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvViewer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GridViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridViewer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Author,
             this.Book});
-            resources.ApplyResources(this.dgvViewer, "dgvViewer");
-            this.dgvViewer.Name = "dgvViewer";
+            resources.ApplyResources(this.GridViewer, "GridViewer");
+            this.GridViewer.Name = "GridViewer";
             // 
             // Id
             // 
@@ -136,11 +138,18 @@
             resources.ApplyResources(this.Book, "Book");
             this.Book.Name = "Book";
             // 
+            // btUpdate
+            // 
+            this.btUpdate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.btUpdate, "btUpdate");
+            this.btUpdate.Name = "btUpdate";
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dgvViewer);
+            this.Controls.Add(this.GridViewer);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form1";
@@ -149,7 +158,7 @@
             this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvViewer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,12 +173,13 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lbStatus;
         private System.Windows.Forms.ToolStripStatusLabel lbStatusText;
-        private System.Windows.Forms.DataGridView dgvViewer;
+        private System.Windows.Forms.DataGridView GridViewer;
         private System.Windows.Forms.ToolStripButton btReadAll;
         private System.Windows.Forms.ToolStripButton btClearTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Author;
         private System.Windows.Forms.DataGridViewTextBoxColumn Book;
+        private System.Windows.Forms.ToolStripButton btUpdate;
     }
 }
 

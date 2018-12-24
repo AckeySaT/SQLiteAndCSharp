@@ -4,13 +4,14 @@ D:\VSCE\Project\Racion2018\SQLiteSample\bin\Debug\Racion2018.pdb
 D:\VSCE\Project\Racion2018\SQLiteSample\bin\Debug\ru\Racion2018.resources.dll
 D:\VSCE\Project\Racion2018\SQLiteSample\bin\Debug\System.Data.SQLite.dll
 D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\Racion2018.csprojAssemblyReference.cache
-D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\SQLiteSample.AddDataToDb.resources
-D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\SQLiteSample.Form1.resources
 D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\Racion2018.Properties.Resources.resources
-D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\SQLiteSample.Form1.ru.resources
 D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\Racion2018.csproj.GenerateResource.cache
 D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\Racion2018.csproj.CoreCompileInputs.cache
 D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\ru\Racion2018.resources.dll
 D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\Racion2018.csproj.CopyComplete
 D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\Racion2018.exe
 D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\Racion2018.pdb
+D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\Racion2018.AddDataToDb.resources
+D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\Racion2018.Form1.resources
+D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\Racion2018.Form1.ru.resources
+D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\SQLiteSample.AddDataToDb.resources
