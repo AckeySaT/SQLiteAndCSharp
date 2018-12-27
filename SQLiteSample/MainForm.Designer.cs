@@ -109,6 +109,7 @@ namespace Racion2018
             this.Column1});
             resources.ApplyResources(this.GridViewer, "GridViewer");
             this.GridViewer.Name = "GridViewer";
+            this.GridViewer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewer_CellClick);
             this.GridViewer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewer_CellContentClick_1);
             // 
             // Column1
