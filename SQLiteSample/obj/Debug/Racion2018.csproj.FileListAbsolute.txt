@@ -12,5 +12,4 @@ D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\Racion2018.exe
 D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\Racion2018.pdb
 D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\Racion2018.Form1.resources
 D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\Racion2018.Form1.ru.resources
-D:\VSCE\Project\Racion2018\SQLiteSample\bin\Debug\Racion2018.exe.CodeAnalysisLog.xml
-D:\VSCE\Project\Racion2018\SQLiteSample\bin\Debug\Racion2018.exe.lastcodeanalysissucceeded
+D:\VSCE\Project\Racion2018\SQLiteSample\obj\Debug\Racion2018.csprojAssemblyReference.cache

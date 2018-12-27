@@ -60,6 +60,18 @@ namespace Racion2018
             GridViewer.Refresh();
             // Отображаем данные
             GridViewer.DataSource = ds.Tables[0];
+
+            int i = 0;
+            GridViewer.AllowUserToOrderColumns = false;
+            
+            foreach (DataGridViewColumn col in GridViewer.Columns)
+            {
+                col.HeaderCell.Value = ds.Tables[0].Rows[0][i];
+                col.SortMode = DataGridViewColumnSortMode.NotSortable;
+                col.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                i++;
+            }
+
         }
 
         private void btCreate_Click(object sender, EventArgs e)
